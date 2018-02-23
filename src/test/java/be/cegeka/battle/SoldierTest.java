@@ -61,4 +61,15 @@ public class SoldierTest {
         Soldier soldier = new Soldier("Gerri", AXE);
         assertThat(soldier.getWeapon().getDamage()).isEqualTo(3);
     }
+
+    @Test
+    public void soldierMustBeAbleToFightWithOtherSoldier_shouldCompareWeaponDamage() throws Exception {
+        Soldier axeSoldier = new Soldier("Thibault", AXE);
+        Soldier spearSoldier = new Soldier("Gerri", SPEAR);
+
+        String winner = axeSoldier.fight(spearSoldier);
+
+        assertThat(winner).isEqualTo("Thibault");
+
+    }
 }

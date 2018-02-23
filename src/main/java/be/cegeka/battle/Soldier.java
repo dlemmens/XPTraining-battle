@@ -30,4 +30,13 @@ public class Soldier {
     public Weapon getWeapon() {
         return weapon;
     }
+
+    public String fight(Soldier soldier) {
+        if (soldier.weapon.getDamage() >= this.weapon.getDamage()) {
+
+            return soldier.getName();
+        }
+        return this.getName();
+    }
+
 }
