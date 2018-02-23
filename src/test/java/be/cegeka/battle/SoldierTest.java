@@ -1,7 +1,11 @@
 package be.cegeka.battle;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import static be.cegeka.battle.Weapon.AXE;
+import static be.cegeka.battle.Weapon.SPEAR;
+import static be.cegeka.battle.Weapon.SWORD;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SoldierTest {
@@ -28,4 +32,27 @@ public class SoldierTest {
         new Soldier("   ");
     }
 
+    @Test
+    public void everySoldierHasAWeapon() throws Exception {
+        Soldier soldier = new Soldier("Gerri");
+        Assertions.assertThat(soldier.getWeapon()).isNotNull();
+    }
+
+    @Test
+    public void givenWeaponIsAxe_soldierShouldHaveWeaponAxe() throws Exception {
+        Soldier soldier = new Soldier("Gerri", AXE);
+        Assertions.assertThat(soldier.getWeapon()).isEqualTo(AXE);
+    }
+
+    @Test
+    public void givenWeaponIsSword_soldierShouldHaveWeaponSword() throws Exception {
+        Soldier soldier = new Soldier("Gerri", SWORD);
+        Assertions.assertThat(soldier.getWeapon()).isEqualTo(SWORD);
+    }
+
+    @Test
+    public void givenWeaponIsSpear_soldierShouldHaveWeaponSpear() throws Exception {
+        Soldier soldier = new Soldier("Gerri", SPEAR);
+        Assertions.assertThat(soldier.getWeapon()).isEqualTo(SPEAR);
+    }
 }
