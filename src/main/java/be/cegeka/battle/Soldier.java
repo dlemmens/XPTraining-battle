@@ -7,6 +7,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 public class Soldier {
 
     private String name;
+    private String awesome;
 
     public Soldier(String name) {
         Validate.isTrue(isNotBlank(name));
