@@ -35,24 +35,30 @@ public class SoldierTest {
     @Test
     public void everySoldierHasAWeapon() throws Exception {
         Soldier soldier = new Soldier("Gerri");
-        Assertions.assertThat(soldier.getWeapon()).isNotNull();
+        assertThat(soldier.getWeapon()).isNotNull();
     }
 
     @Test
     public void givenWeaponIsAxe_soldierShouldHaveWeaponAxe() throws Exception {
         Soldier soldier = new Soldier("Gerri", AXE);
-        Assertions.assertThat(soldier.getWeapon()).isEqualTo(AXE);
+        assertThat(soldier.getWeapon()).isEqualTo(AXE);
     }
 
     @Test
     public void givenWeaponIsSword_soldierShouldHaveWeaponSword() throws Exception {
         Soldier soldier = new Soldier("Gerri", SWORD);
-        Assertions.assertThat(soldier.getWeapon()).isEqualTo(SWORD);
+        assertThat(soldier.getWeapon()).isEqualTo(SWORD);
     }
 
     @Test
     public void givenWeaponIsSpear_soldierShouldHaveWeaponSpear() throws Exception {
         Soldier soldier = new Soldier("Gerri", SPEAR);
-        Assertions.assertThat(soldier.getWeapon()).isEqualTo(SPEAR);
+        assertThat(soldier.getWeapon()).isEqualTo(SPEAR);
+    }
+
+    @Test
+    public void whenGettingDamageOfAxe_shouldReturn3() throws Exception {
+        Soldier soldier = new Soldier("Gerri", AXE);
+        assertThat(soldier.getWeapon().getDamage()).isEqualTo(3);
     }
 }
